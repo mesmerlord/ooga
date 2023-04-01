@@ -33,7 +33,7 @@ COPY entrypoint.sh .
 # Create a volume for the model files
 VOLUME /app/models
 
-RUN python3.8 download-model.py chavinlo/gpt4-x-alpaca
+# RUN python3.8 download-model.py chavinlo/gpt4-x-alpaca
 
 # Expose the port the app will run on
 EXPOSE 7860
