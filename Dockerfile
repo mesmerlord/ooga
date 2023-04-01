@@ -27,6 +27,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code
 COPY . .
 
+# Copy the entrypoint.sh script
+COPY entrypoint.sh .
+
 # Create a volume for the model files
 VOLUME /app/models
 
@@ -35,5 +38,5 @@ RUN python3.8 download-model.py chavinlo/gpt4-x-alpaca
 # Expose the port the app will run on
 EXPOSE 7860
 
-# Start the application
-CMD ["python3.8", "server.py", "--auto-devices", "--cai-chat"]
+# Set the entrypoint
+ENTRYPOINT ["./entrypoint.sh"]
