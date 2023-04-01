@@ -38,5 +38,8 @@ VOLUME /app/models
 # Expose the port the app will run on
 EXPOSE 7860
 
+RUN chmod +x entrypoint.sh
+
+
 # Set the entrypoint
 ENTRYPOINT ["./entrypoint.sh"]
